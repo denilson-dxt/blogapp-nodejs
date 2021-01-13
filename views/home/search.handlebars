@@ -1,0 +1,26 @@
+{{>_siteHeader}}
+<div class="site-content">
+    <main>
+        <h3>Resultados pe pesquisa por {{key}}</h3>
+        <div class="posts">
+            {{#each posts}}
+                <div class="preview-post">
+                    <img src="/images/diary3.jpg"/>
+                    <h3>{{title}}</h3>
+                    <small>Publicado: {{date}}</small>
+                    <div>
+                        {{slice content 300}}...
+                    </div>
+                    <div>
+                        <a href="/post/{{slug}}" class="link-btn-style">Ler mais</a>
+                    </div>
+                    
+                </div>
+            {{else}}
+            <h3>Sem publicacoes</h3>
+
+            {{/each}}
+        </div>
+    </main>
+    
+</div>

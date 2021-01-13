@@ -1,0 +1,321 @@
+.site-header{
+    width:99%;
+    background-color: rgba(50, 50, 50, .9);
+    display: flex;
+    padding:.5%;
+    height: 400px;
+    background: url("/images/pic1.jpg") no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+
+.site-header nav{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+}
+
+
+.site-header .top-header{
+    width:100%;
+    display: flex;
+}   
+
+.site-header .site-name{
+    width:50%;
+    display: flex;
+    align-items: flex-start;
+    padding: 1%;
+}
+
+.site-header form{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.site-header form label{
+    font-size:1.3em;
+    color:white;
+    margin-bottom:1%;
+    font-family: sans-serif;
+}
+
+.site-header form input{
+    width:50%;
+    height: 15px;
+    padding: 1%;
+    border-radius: 10px;
+    border:none;
+    font-size:1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.site-header form div{
+    width:80%;
+}
+
+
+.site-header .user{
+    width:50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1%;
+    flex-direction: row;
+}
+
+.site-header .user img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+/*Content*/
+.site-content{
+    width: 96%;
+    padding:2%;
+    display: flex;
+    min-height: 50vh;
+}
+
+.site-content main{
+    width:79%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-content main .posts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-content main .posts .preview-post{
+    width:90%;
+    margin: auto;
+    box-shadow: 0px 0px 10px 10px rgba(230, 230, 230, 1);
+    margin-top:4%;
+    margin-bottom:4%;
+    padding:1%; 
+    border-radius: 1%;
+}
+.site-content main .posts .preview-post img{
+    width:100%;
+    max-height: 40vh;
+    margin:0;
+}
+.site-content main .posts .preview-post div{
+    text-align: justify;
+    display: flex;
+    justify-content: flex-end;
+}
+.site-content main .posts .preview-post h3{
+    color: teal;
+}
+
+.site-content main .posts .preview-post a{
+    width:100px;
+}
+.site-content aside{
+    width:20%;
+}
+
+
+/*Post page*/
+.site-content main .post{
+    /*box-shadow: 0 0 10px 10px rgba(230, 230, 230, 1);*/
+    border-radius: 5px;
+    width:90%;
+    margin: auto;;
+}
+.site-content main .post h3{
+    color:teal;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.site-content main .post .post-content{
+    padding:2%;
+    text-align: justify;
+    font-family:'Open Sans', Arial, sans-serif;
+    line-height: 1.4;
+}
+.site-content main .post .post-content img{
+    max-width: 100%;
+    max-height:100%;
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
+.classification{
+    width:90%;
+    margin: auto;
+}
+.classification-emojis{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 10px rgba(230, 230, 230, 1);
+    height:70px;
+}
+
+.classification-emojis h2{
+    margin:0 100px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.classification-emojis h2:hover{
+    font-size: 1.8em;
+}
+
+.classification-emojis h2 .classification-value{
+    display:none;
+}
+
+.site-content main .coments{
+    width:82%;
+    margin: auto;
+    margin-top:7%;
+}
+.site-content main .coments .coment{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 10px rgba(230, 230, 230, 1);
+    min-height: 100px;
+    border-radius: 10px;
+    padding: 1%;
+    margin-bottom:5%;
+    margin-top:2%;
+}
+.site-content main .coments .coment .user{
+    display:flex;
+    height: 50px;
+    align-items: center;
+    font-size:1.1em;
+}
+
+.site-content main .coments .coment .user img{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;;
+    margin-right:1%;
+}
+.site-content main .coments .coment .coment-content{
+    width:95%;
+    height:100%;
+    display: flex;
+    margin-top:2%;
+    margin-left:5%;
+    text-align: justify;
+}
+.site-content main .coments .coment button{
+    width:200px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border:none;
+    margin-top:2%;
+}
+.site-content main .coments .coment .coment-answers{
+    width:90%;
+    margin-left: auto;
+    margin-bottom:1%;
+    display: none;
+    flex-direction: column;
+}
+.site-content main .coments .coment .coment-answers .coment{
+    border-radius: 0;
+    box-shadow: none;
+    min-height: auto;
+    border-bottom: 1px solid rgba(50, 50, 50, .9);
+}
+
+
+.new-coment{
+    width:100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 10px rgba(230, 230, 230, 1);
+    margin: auto;
+    margin-top:5%;
+    margin-bottom: 5%;;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.new-coment label{
+    font-size:1.1em;
+    text-align: left;
+    padding: 1%;
+}
+.new-coment textarea{
+    width:90%;
+    min-height: 100px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 230, 230, 1);
+    padding:2%;
+    margin-bottom: 1%;
+}
+.new-coment input{
+    width:150px;
+    margin-bottom:2%;
+    margin-left: auto;
+    border: none;
+    margin-right:3%;
+}
+
+
+
+
+
+
+
+/*Login*/
+.default-form-div{
+    margin:auto;
+    width: 40%;
+    box-shadow: 0 0 10px 10px rgba(230, 230, 230, 1);
+    display: flex;
+    min-height: 300px;
+    margin-top:5%;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.default-form-div form {
+    display:flex;
+    margin: auto;
+    width:90%;
+    flex-direction: column;
+}
+
+.default-form-div form input{
+    width:95%;
+    padding:2%;
+    border:0;
+    border-radius: 10px;
+    border:1px solid gray;
+    margin-top:2%;
+    margin-bottom:2%;
+}
+.default-form-div form :last-child{
+    padding:0;
+    width:100%;
+    margin:0;
+    margin-bottom:5%;
+}
+
+
+footer{
+    width: 100%;
+    min-height:100px;
+    border-top:1px solid rgb(233, 227, 227);
+    text-align:center;
+}

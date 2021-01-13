@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/admin/index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/site/index.css">
+    <script src="/js/site/script.js"></script>
+    <script src="/js/admin/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+
+    <title>My blog</title>
+</head>
+<body>
+    <div class="app">
+
+        {{{body}}}
+
+        {{>_footer}}
+    
+    </div>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#content' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+            
+    
+</script>
+</body>
+</html>

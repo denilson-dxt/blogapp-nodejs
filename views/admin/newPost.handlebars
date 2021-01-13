@@ -1,0 +1,42 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>New user {{user_target.username}}</h3>
+      <form class="edit-model" action="/admin/posts/new-post" method="POST">
+            <label>
+                Title:
+                <input onchange="changeSlug(event)"  type="text" name="title" id="title" required value="{{user_target.username}}">
+            </label>
+
+            <label>
+                Slug:
+                <input type="text" name="slug" id="slug" required value="{{user_target.first_name}}">
+            </label>
+            
+           
+            <label>
+                Content:
+            </label>
+            <textarea name="content" id="content" ></textarea>
+
+            <label>
+                Publisher:
+                <select name="user" required>
+                    {{#each users}}
+                        <option value="{{_id}}">{{username}}</option>
+                    {{else}}
+                        <option>No users</option>
+                    {{/each}}
+                </select>
+            </label>
+            <div class="form-actions-div">
+
+                <input type="submit" class="default-btn-input" value="Create post">
+            </div>
+            
+      </form>
+
+    </div>
+    {{>_recentTasks}}
+</div>

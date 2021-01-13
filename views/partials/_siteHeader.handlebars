@@ -1,0 +1,26 @@
+<header class="site-header">
+    <nav>
+        <div class="top-header">
+                <div class="site-name">
+                <a href="/">DevBlog</a>
+                </div>
+            <div class="user">
+
+                {{#if user}}
+
+                <img src="/images/diary.jpg"/>                 
+                <h3><a class="link-btn-style " href="/users/logout">Logout</a></h3>    
+                {{else}}
+                <h3><a class="link-btn-style " href="/users/login"  >Login</a></h3>
+
+                <h3><a class="link-btn-style " href="/users/signup">Signup</a></h3>
+                {{/if}}
+            </div>
+        </div>
+        <form onsubmit="search(event)">
+            <label>Pesquisar publicacao</label>
+            <input type="text" id="search-textarea" placeholder="Procure uma publicacao" required/>
+        </form>
+        
+    </nav>
+</header>

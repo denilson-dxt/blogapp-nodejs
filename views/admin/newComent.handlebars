@@ -1,0 +1,43 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>New user {{user_target.username}}</h3>
+      <form class="edit-model" action="/admin/coments/new-coment" method="POST">
+           
+            <label>
+                Publisher:
+                <select name="user" required>
+                    {{#each users}}
+                        <option value="{{_id}}">{{username}}</option>
+                    {{else}}
+                        <option>No users</option>
+                    {{/each}}
+                </select>
+            </label>
+            <label>
+                Publication:
+                <select name="post" required>
+                    {{#each posts}}
+                        <option value="{{_id}}">{{title}}</option>
+                    {{else}}
+                        <option>No posts</option>
+                    {{/each}}
+                </select>
+            </label>
+            <label>
+                Content:
+                <textarea name="content" required></textarea>
+            </label>
+            
+
+            <div class="form-actions-div">
+
+                <input type="submit" class="default-btn-input" value="Create coment">
+            </div>
+            
+      </form>
+
+    </div>
+    {{>_recentTasks}}
+</div>

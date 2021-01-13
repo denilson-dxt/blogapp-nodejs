@@ -1,0 +1,37 @@
+{{>_siteHeader}}
+
+<div class="content">
+<div class="default-form-div">
+    <h4 class="soft-title" >Formulario de registro</h4>
+    <form method="POST" action="/users/signup">
+        <label>
+            Username
+        </label>
+            <input type="text" required name="username">
+        <label>
+            First name
+        </label>
+            <input type="text" name="first_name">
+        <label>
+            Last name
+        </label>
+            <input type="text" name="last_name">
+        <label>
+        </label>
+            <input type="email" required name="email">
+        
+        <label>
+            Password
+        </label>
+            <input type="password" name="password">
+        <label for="">
+            Confirm password
+        </label>
+            <input type="password">
+
+        <input type="submit" value="Registrar" class="link-btn-style">
+        <a href="/users/login">Ja tenho uma conta</a>
+
+    </form>
+</div>
+</div>

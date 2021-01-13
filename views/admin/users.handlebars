@@ -1,0 +1,34 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>Usuarios</h3>
+        <div class="link-style">
+            <a href="/admin/users/new-user" class="link-style">New user</a>
+        </div>
+        <div class="users-list">
+            <form action="/admin/users/action" method="POST">
+                <div>
+                    <select name="action">
+                        <option>Nenhuma accao</option>
+                        <option>Delete selected objects</option>
+                        <option>Set active</option>
+                    </select>
+                    <input type="submit" value="Aplicar"> 
+                </div>
+                {{#each users}}
+                    <div class="user">
+                        <input type="checkbox" value="{{_id}}" name="users">
+                        <a href="/admin/users/object/{{_id}}">{{username}}</a>
+                    </div>
+                {{else}}
+                    {{users}}
+                {{/each}}
+            </form>
+
+        </div>
+        
+
+    </div>
+    {{>_recentTasks}}
+</div>

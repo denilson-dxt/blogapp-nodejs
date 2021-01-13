@@ -1,0 +1,44 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>Update post {{post.title}}</h3>
+      <form class="edit-model" action="/admin/posts/object/{{post._id}}/update" method="POST">
+            <label>
+                Title:
+                <input type="text" onchange="changeSlug(event)" id="title" name="title" required value="{{post.title}}">
+            </label>
+
+            <label>
+                Slug:
+                <input type="text" name="slug" id="slug" required value="{{post.slug}}">
+            </label>
+            
+           
+            <label>
+                Content:
+                <textarea name="content" id="content" required>{{post.content}}</textarea>
+            </label>
+            
+            <label>
+                Publisher:
+                <select name="user" required >
+                    
+                    {{#each users}}
+                        <option value="{{_id}}">{{username}}</option>
+                    {{else}}
+                        <option>No users</option>
+                    {{/each}}
+                </select>
+            </label>
+            <div class="form-actions-div">
+                <a href="/admin/posts/object/{{post._id}}/delete" class="link-btn-style danger">Delete</a>
+                <input type="submit" class="default-btn-input" value="Update post">
+                
+            </div>
+            
+      </form>
+
+    </div>
+    {{>_recentTasks}}
+</div>

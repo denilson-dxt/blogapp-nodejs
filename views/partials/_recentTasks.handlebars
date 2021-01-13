@@ -1,0 +1,30 @@
+<script>
+Handlebars.registerHelper("noop", function(options) {
+  return options.fn(this);
+});
+</script>
+
+<div class="recent-actions">
+    <h3>Tarefas recentes</h3>
+    <ul class="tasks">
+        {{#each TasksHistory}}
+
+        <li>
+            <div class="task">
+                <h4>{{title}}</h4>
+                {{#if  (ifCond model "===" "user")}}
+
+                {{else}}
+
+                {{/if}}
+                <small >Model: <a href="/admin/{{model}}s">{{model}} </a></small>
+                <small>Date: {{date}}</small>
+                <a href="/admin/{{model}}/object/{{object_id}}">See object</a>
+            </div>
+        </li>
+        {{else}}
+            <h4>No recent tasks</h4>
+        {{/each}}
+    </ul>    
+
+</div>

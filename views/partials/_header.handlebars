@@ -1,0 +1,14 @@
+<header>
+    <nav>
+        {{#if user}}
+        <a href="/users/logout">Logout</a>
+        {{#each user}}
+            <span>{{username}}</span>
+        {{/each}}
+        {{else}}
+        <a href="/users/login">Login</a>
+        
+        <a href="/users/signup">Signup</a>
+      {{/if}}
+    </nav>
+</header>

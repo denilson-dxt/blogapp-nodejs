@@ -1,0 +1,33 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>Coments Answers</h3>
+        <div class="link-style">
+            <a href="/admin/coments_answers/new-coment_answer" class="link-style">New coment Answer</a>
+        </div>
+        <div class="users-list">
+            <form action="/admin/coments_answers/action" method="POST">
+                <div>
+                    <select name="action">
+                        <option>No action</option>
+                        <option>Delete selected coments answer</option>
+                    </select>
+                    <input type="submit" value="Aplicar"> 
+                </div>
+                {{#each coments_answers}}
+                    <div class="user">
+                        <input type="checkbox" value="{{_id}}" name="coments_answers">
+                        <a href="/admin/coments_answers/object/{{_id}}">{{content}}</a>
+                    </div>
+                {{else}}
+                    <h4>No coment answer registered</h4>
+                {{/each}}
+            </form>
+
+        </div>
+        
+
+    </div>
+    {{>_recentTasks}}
+</div>

@@ -1,0 +1,54 @@
+{{> _adminHeader}}
+<div class="model-page">
+    {{>_model}}
+    <div class="model-details">
+        <h3>Edit user {{user_target.username}}</h3>
+      <form class="edit-model" action="/admin/users/object/{{user_target.id}}/update" method="POST">
+            <label>
+                Username
+                <input type="text" name="username" required value="{{user_target.username}}">
+            </label>
+
+            <label>
+                First name
+                <input type="text" name="first_name"  value="{{user_target.first_name}}">
+            </label>
+            
+            <label>
+                Last name
+                <input type="text" name="last_name"  value="{{user_target.last_name}}">
+            </label>
+
+            <label>
+                Email
+                <input type="email" name="email" required value="{{user_target.email}}">
+            </label>
+            
+           <div >
+                <label>
+                    Is admin:
+                    <input type="checkbox" name="isAdmin" {{#if user_target.isAdmin}} checked {{else}} {{/if}}>
+                </label>
+
+                <label>
+                    Is active
+                    <input type="checkbox" name="isActive" required {{#if user_target.isActive}} checked {{else}} {{/if}}>
+                </label>
+
+                <label>
+                    Is subscribed
+                    <input type="checkbox" name="isSubscribed" {{#if user_target.isSubscribed}} checked {{else}} {{/if}}>
+                </label>
+
+           </div>
+            <div class="form-actions-div">
+                <a href="/admin/users/object/{{user_target.id}}/delete" class="link-btn-style danger">Delete user</a>
+            
+                <input type="submit" class="default-btn-input" value="Salvar alteracoes">
+            </div>
+            
+      </form>
+
+    </div>
+    {{>_recentTasks}}
+</div>

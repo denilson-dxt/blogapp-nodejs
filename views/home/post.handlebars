@@ -1,0 +1,59 @@
+{{>_siteHeader}}
+<div class="site-content">
+    <main>
+        <div class="post">
+            <h3>{{post.title}}</h3>
+            <div class="post-content">
+                {{{post.content}}}
+                
+            </div>
+        </div>
+        <div class="classification">
+            <h4>O que achou do post?</h4>
+            <div class="classification-emojis">
+                <h2 onclick="vote('verry good', '{{post._id}}', this)">&#128525 <small class="classification-value">0</small></h2>
+                <h2 onclick="vote('usefull', '{{post._id}}')">&#128546 <small class="classification-value">0</small></h2>
+                <h2 onclick="vote('bad', '{{post._id}}')">&#128545 <small class="classification-value">0</small></h2>
+
+            </div>
+        </div>
+        <div class="coments" id="coments">   
+            <form class="new-coment" method="POST" onsubmit="sendComent(event, '{{post._id}}')">
+                <label for="coment-textarea">Deixe um comentario:</label>
+                <textarea name="content" id="coment-textarea" placeholder="Escreva aqui o seu comentario"></textarea>
+                {{#if user}}
+                <input type="hidden" name="user" value="{{user._id}}"/>
+                {{else}}
+                Nota: voce nao esta logado, seu comentario sera enviado como "desconhecido"
+                {{/if}}
+                <input class="link-btn-style" type="submit" value="Enviar comentario"/>
+                <input type="hidden" name="post" value="{{post._id}}"/>
+                
+                <input type="hidden" name="post_slug" value="{{post.slug}}"/>
+            </form>
+            {{#each coments}}
+            <div class="coment">
+                <div class="user">
+                    <img src="/images/diary2.jpg"/>
+                    <span>{{user.username}} disse:</span>
+                </div>
+                <div class="coment-content">
+                    {{content}}
+                </div>
+                <div class="coment-answers" id="{{_id}}">
+                    <div class="answers" id="answers{{_id}}">
+                        <h1>Teste</h1>
+                    </div>
+                   <div class="answer-form">
+                 
+                   </div>        
+                </div>
+                <button onclick="showComentAnswers('{{_id}}')" class="link-btn-style">Ver respostas</button>
+            </div>
+            {{else}}
+            <h3>Esse post nao tem comentarios</h3>
+            {{/each}}
+        </div>
+    </main>
+    {{>_siteAside}}
+</div>

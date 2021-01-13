@@ -1,0 +1,61 @@
+{{> _adminHeader}}
+<div class="content">
+    <h2>Admin page</h2>
+    <div class="actions">
+        <div class="models">
+            <div class="models-list">
+                <ul>
+                    <li>
+                        <h4><a href="/admin/users">Usuarios</a></h4>
+                        <div>
+                            <ul>
+                                {{#each users}}
+                                    <li><a href="/admin/users/object/{{_id}}">{{username}}</a></li>
+                                {{else}}
+                                    <h3>No user registred</h3>
+                                {{/each}}
+                            </ul>
+                        </div>    
+                    </li>
+                    <li>
+                        <h4><a href="/admin/posts">Postagens</a></h4>
+                        <div>
+                            <ul>
+                                {{#each posts}}
+                                    <li><a href="/admin/posts/object/{{_id}}">{{title}}</a></li>
+                                {{else}}
+                                    <h3>No post registred</h3>
+                                {{/each}}
+                            </ul>
+                        </div>    
+                    </li>
+                    <li>
+                        <h4><a href="#">Categorias </a></h4>
+                        <div>
+                            <ul>
+                                {{#each categories}}
+                                    <li><a href="/admin/users/object/{{_id}}">{{username}}</a></li>
+                                {{else}}
+                                    <h3>No category registred</h3>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h4><a href="/admin/coments">Comentarios</a></h4>
+                        <div>
+                            <ul>
+                                {{#each coments}}
+                                    <li><a href="/admin/users/object/{{_id}}">{{username}}</a></li>
+                                {{else}}
+                                    <h3>No coment registred</h3>
+                                {{/each}}
+                            </ul>
+                        </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{>_recentTasks}}
+    </div>
+</div>
